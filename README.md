@@ -1,39 +1,40 @@
-# FCONN_Backend
-* This is the Node, Express backend that connects to the MongoDB for the FCONN project.
-* You will need access to the MongoDB database.
-* Reach out to me at lucasdale99@gmail.com in order to be added to the MongoDB Organization. 
-* I will then pass it on to whomever takes up the project and leave the database in your hands.
-* Link to Front End https://github.com/lucasdale99/FCONN
+# FCONN
+This is an updated MERN stack version of the Old_FCONN project. In the future, It will also be available on mobile. However we stuck to the website version for this semester. (Fall 2021)
 
-# MongoDB Atlas Tutorial
-* https://www.youtube.com/watch?v=S4fi6Qux-4g
+To start up the project you will need to install npm, node.js, and bootstrap installed. VS code is the preferred IDE for development.
 
-# MERN Stack Tutorial
-* If you follow along with these two videos, you will understand the majority of this project.
-* https://www.youtube.com/watch?v=ngc9gnGgUdA
-* https://www.youtube.com/watch?v=aibtHnbeuio 
+### Node.js and NPM:
+* Visit https://nodejs.org/en/download/ and download the installer for your OS.
+* Node.js and NPM will be installed using the above link.
+* To verify the install was successful, run "node -v" then "npm -v" in your terminal without the quotations.
 
-In order to start up this project locally:
-1. Run npm install in the terminal.
-2. Then run npm install -g nodemon
-3. Type in 'nodemon server'
-4. This starts watching on  https://localhost:5000
+**The next steps will require you have installed Node.js and NPM correctly.** 
 
-To start up the backend server
--Make sure to install all the npm packages in the package.json under dependencies.
+### MaterialUI and other dependencies:
+* Navigate to the FCONN folder and open it up in the terminal.  
+* Type the command "npm install" without the quotations.
+* This command will install all of the dependencies in the package.json file.
 
-On Mac
-Install Nodemon globally:
-sudo npm install -g nodemon
 
-Then run:
-sudo nodemon server
+### Starting the project: 
+* Navigate to the FCONN folder and open it up in the terminal.
+* I recommend using Visual Studio Code for this project.
+* Install the latest node.js lts version.
+* Run npm install in the terminal of this project.
+* Type the command "npm start" without the quotations. 
+* The localhost react app will start in your default browser.
+* The full functionality of the project will not be available unless you have the FCONN Backend runnng as well.
+* You can check your global dependencies with this command: npm list -g --depth=0
+* The only global depedency you need is nodemon for this project.
+* You can install by typing "npm install -g nodemon" in the terminal.
+* Link to the Backend repo https://github.com/lucasdale99/FCONN_Backend
 
-On Windows run in administrator mode:
-Install nodemon globally and run:
+### Making Changes to Google API Services
+* https://console.cloud.google.com/home/dashboard?project=foodconnection-328003
+	
 
-1. npm install
+Don't forget:
+1. When working in react, you need to import the components you want to use. If you get errors similar to can't find estate, you need to import that like:
+    import {useState} from "react";
 
-2. npm install -g nodemon
-
-3. nodemon server
+1. This is the same for all components. Each component if used in a certain view, needs to be imported.
