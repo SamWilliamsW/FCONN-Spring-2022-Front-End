@@ -55,8 +55,10 @@ export default function Navbar() {
       <Toolbar className={styles.toolbar}>
         {user?.result ? (
           <div className={styles.profile}>
-          <Link to="/restraunts" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
-          <Button className={styles.userName}>Restraunts</Button></Link>
+            <Link to="/mapContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>MapTest</Button></Link>
+            <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>restaurants</Button></Link>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
             <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
