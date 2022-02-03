@@ -4,17 +4,32 @@ import { lightBlue } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
-    marginBottom: '30px',
+    marginBottom: '20px',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
+    // [theme.breakpoints.down('sm')]: {
+    //   flexDirection: 'column',
+    // },
     backgroundColor: '#e0aa0f',
+  },  
+  toolbar: {
+    textAlign: 'right',
+    display: 'inline',
+    justifyContent: 'flex-end',
+    width: '100%',
+    backgroundColor: 'white',
+    paddingTop: '15px',
+    // [theme.breakpoints.down('sm')]: {
+    //   width: 'auto',
+    // },
   },
+  // Logo: {
+  //   display: 'row',
+  //   backgroundColor: 'green',
+  //   width: '100%',
+  // },
   heading: {
     marginLeft: '10px',
     color: theme.palette.primary.main,
@@ -23,18 +38,11 @@ export default makeStyles((theme) => ({
     //fontWeight: 700,
     fontFamily: 'Cooper Black',
     color: '#112e51',
+    marginBottom: '30px',
   },
   image: {
     marginLeft: '10px',
     marginTop: '5px',
-  },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-    },
   },
   profile: {
     display: 'flex',
