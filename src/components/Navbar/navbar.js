@@ -44,6 +44,7 @@ export default function Navbar() {
 
   return (
     <AppBar className={styles.appBar} position="static">
+      <div className={styles.Logo}>
       {user?.result == undefined || user?.result == null ?
         <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
@@ -52,11 +53,15 @@ export default function Navbar() {
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
       }
+      </div>
+      <hr/>
       <Toolbar className={styles.toolbar}>
         {user?.result ? (
           <div className={styles.profile}>
-          <Link to="/restraunts" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
-          <Button className={styles.userName}>Restraunts</Button></Link>
+            <Link to="/mapContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>MapTest</Button></Link>
+            <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>restaurants</Button></Link>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
             <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
