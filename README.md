@@ -27,6 +27,7 @@ To start up the project you will need to install npm, node.js, and bootstrap ins
 * You can check your global dependencies with this command: npm list -g --depth=0
 * The only global depedency you need is nodemon for this project.
 * You can install by typing "npm install -g nodemon" in the terminal.
+* Install the Google Maps API by using the command "npm i @react-google-maps/api"
 * Link to the Backend repo https://github.com/lucasdale99/FCONN_Backend
 
 ### Making Changes to Google API Services
