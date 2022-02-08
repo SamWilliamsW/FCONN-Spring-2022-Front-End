@@ -44,7 +44,6 @@ export default function Navbar() {
 
   return (
     <AppBar className={styles.appBar} position="static">
-      <div className={styles.Logo}>
       {user?.result == undefined || user?.result == null ?
         <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
@@ -53,8 +52,6 @@ export default function Navbar() {
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
       }
-      </div>
-      <hr/>
       <Toolbar className={styles.toolbar}>
         {user?.result ? (
           <div className={styles.profile}>
