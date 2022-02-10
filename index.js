@@ -36,7 +36,6 @@ mongoose.connect(
         console.log(`Listening on port ${PORT}`);
     })
 })
-// Testing
 .catch(err => {
     console.error(err.stack);
     process.exit(1);
