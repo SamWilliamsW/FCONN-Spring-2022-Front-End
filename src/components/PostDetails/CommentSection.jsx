@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Typography, TextField, Button } from '@material-ui/core/';
 import { useDispatch } from 'react-redux';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-import { commentPost } from '../../actions/posts';
+import { commentPost, deleteCommentPost } from '../../actions/posts';
 import useStyles from './styles';
 
 const CommentSection = ({ post }) => {
@@ -30,10 +31,17 @@ const CommentSection = ({ post }) => {
           {comments?.map((c, i) => (
             <Typography key={i} gutterBottom variant="subtitle1">
               <strong>{c.split(': ')[0]}</strong>
-              {c.split(':')[1]}
+                  {c.split(':')[1]}
+
+
+                  {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator || user?.result?.isAdmin === true) && (
+                      <Button size="small" color="secondary" onClick={() => dispatch(deleteCommentPost(post._id, i))}>
+                          <DeleteIcon fontSize="inherit" /> &nbsp; Delete
+                      </Button>
+                  )}
             </Typography>
           ))}
-          <div ref={commentsRef} />
+                  <div ref={commentsRef} />
         </div>
         <div style={{ width: '70%' }}>
           <Typography gutterBottom variant="h6">Write a comment</Typography>
@@ -41,9 +49,9 @@ const CommentSection = ({ post }) => {
           <br />
           <Button style={{ marginTop: '10px' }} fullWidth disabled={!comment.length} color="primary" variant="contained" onClick={handleComment}>
             Comment
-          </Button>
+                  </Button>
         </div>
-      </div>
+          </div>
     </div>
   );
 };
