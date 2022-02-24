@@ -6,21 +6,17 @@ export default makeStyles((theme) => ({
   appBar: {
     marginBottom: '30px',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
     backgroundColor: '#e0aa0f',
+    overflowX: 'hidden',
   },
   heading: {
     marginLeft: '10px',
     color: theme.palette.primary.main,
     textDecoration: 'none',
     fontSize: '2em',
-    //fontWeight: 700,
     fontFamily: 'Cooper Black',
     color: '#112e51',
   },
@@ -28,24 +24,18 @@ export default makeStyles((theme) => ({
     marginLeft: '10px',
     marginTop: '5px',
   },
+// grey nav bar
   toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-    },
+    display: 'inline',
+    paddingTop: '10px',
+    width: '100%',
+    alignItems: 'center',
+    background: '#DCDCDC',
   },
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    //width: '400px',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-      marginTop: 20,
-      justifyContent: 'center',
-    },
   },
   logout: {
     marginLeft: '20px',
