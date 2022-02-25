@@ -12,6 +12,7 @@ const PostDetails = lazy(() => import('./components/PostDetails/PostDetails'));
 const Home = lazy(() => import('./components/Home/home'));
 const CreatorOrTag = lazy(() => import("./components/CreatorOrTag/CreatorOrTag"));
 const MapContainer = lazy(() => import("./components/MapContainer/mapContainer"));
+const SurveyContainer = lazy(() => import("./components/SurveyContainer/surveyContainer"));
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/posts/search" exact component={Home} />
               <Route path="/posts/:id" exact component={PostDetails} />
               <Route path="/mapContainer" exact component={MapContainer} />
+              <Route path="/surveyContainer" exact component={SurveyContainer} />
               <Route path={['/creator/:name', '/tags/:name']} component={CreatorOrTag} />
               <Route path="/auth" exact component={() => (user?.result == null || user?.result == undefined ? <Auth /> : <Redirect to="/posts" />)} />
             </Switch>
