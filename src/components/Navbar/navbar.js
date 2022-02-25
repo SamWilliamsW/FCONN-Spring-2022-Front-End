@@ -61,6 +61,8 @@ export default function Navbar() {
             <Button className={styles.userName}>restaurants</Button></Link>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
+            <Link to="/Account" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>Account</Button></Link>
             <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
           </div>
         ) : (

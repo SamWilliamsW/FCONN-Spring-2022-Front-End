@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, StepIcon } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
 
-import { likePost, deletePost } from '../../../actions/posts';
+import { likePost, deletePost, reportPost } from '../../../actions/posts';
 import useStyles from './styles';
 
 const Post = ({ post, setCurrentId }) => {
@@ -85,18 +85,24 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
         </CardContent>
       </ButtonBase>
-      <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
+      
+      <Card>
+      <Button size="small" color="primary"  disabled={!user?.result} onClick={handleLike}>
           <Likes />
         </Button>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator || user?.result?.isAdmin === true) && (
           <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-            <DeleteIcon fontSize="inherit" /> &nbsp; Delete
+            <DeleteIcon fontSize="small" /> &nbsp; Delete
           </Button>
         )}
-      </CardActions>
+        <Button size="small" color="secondary" onClick={() => dispatch(reportPost(post._id))}>
+        <StepIcon fontSize="inherit" /> &nbsp; Report
+      </Button>
+      </Card>
+
     </Card>
   );
+  
 };
 
 export default Post;

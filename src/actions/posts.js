@@ -1,4 +1,4 @@
-import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, DELETE_COMMENT, FETCH_BY_CREATOR } from '../constants/actionTypes';
+import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, DELETE_COMMENT, FETCH_BY_CREATOR, REPORT } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
 export const getPost = (id) => async (dispatch) => {
@@ -114,3 +114,15 @@ export const deleteCommentPost = (id, commentIndex) => async (dispatch) => { //
         console.log(error);
     }
 };
+
+
+// This is for reporting a post. The method is called reportPost in the backend.
+export const reportPost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.reportPost(id);
+
+    dispatch({ type: REPORT, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+}
