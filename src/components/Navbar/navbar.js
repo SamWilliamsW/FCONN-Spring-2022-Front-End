@@ -61,12 +61,9 @@ export default function Navbar() {
             <Button className={styles.userName}>restaurants</Button></Link>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
-<<<<<<< HEAD
             <Link to="/Account" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
-=======
-            <Link to="/surveyContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
->>>>>>> b2954f92671675209def55ad419144e1d8a3fe23
             <Button className={styles.userName}>Account</Button></Link>
+            <Link to="/surveyContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}></Link>
             <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
           </div>
         ) : (
