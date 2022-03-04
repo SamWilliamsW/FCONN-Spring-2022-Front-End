@@ -24,3 +24,15 @@ export const signup = (formData, router) => async (dispatch) => {
     console.log(error);
   }
 };
+
+  export const businesssignup = (formData, router) => async (dispatch) => {
+    try {
+      const { data } = await api.businessSignUp(formData);
+
+      dispatch({ type: AUTH, data });
+
+      router.push('/posts');
+    } catch (error) {
+      console.log(error);
+    }
+  };
