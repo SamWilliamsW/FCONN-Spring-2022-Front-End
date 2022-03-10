@@ -51,6 +51,8 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
+    
+    console.log(post.name),
     <Card className={classes.card} raised elevation={6}>
       <ButtonBase
         component="span"
@@ -99,8 +101,8 @@ const Post = ({ post, setCurrentId }) => {
         <StepIcon fontSize="inherit" /> &nbsp; Report
       </Button>
       </Card>
-
     </Card>
+
   );
   
 };
