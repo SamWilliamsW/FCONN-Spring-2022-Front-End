@@ -116,7 +116,7 @@ export const deleteCommentPost = (id, commentIndex) => async (dispatch) => { //
 };
 
 
-// This is for reporting a post. The method is called reportPost in the backend.
+// This is for reporting a post. The method is called reportPost in the backend. 
 export const reportPost = (id) => async (dispatch) => {
   try {
     const { data } = await api.reportPost(id);

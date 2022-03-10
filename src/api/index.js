@@ -26,3 +26,4 @@ export const reportPost = (id) => API.patch(`/posts/${id}/reportPost`);
 
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
+export const businessSignUp = (formData) => API.post('/user/businesssignup', formData);
