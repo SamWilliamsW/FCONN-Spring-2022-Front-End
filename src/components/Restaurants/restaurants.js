@@ -11,13 +11,13 @@ import { getRestaurant } from '../../actions/restaurants';
 // import Form from '../Form/form';
 // import Pagination from '../Pagination';
 import useStyles from './styles';
-import restraunts from '../../reducers/restraunts';
+import restaurants from '../../reducers/restaurants';
 
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
-const Restraunt = ({ restraunt }) => {
+const Restaurants = ({ restaurant }) => {
   // const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
@@ -31,7 +31,7 @@ const Restraunt = ({ restraunt }) => {
 
   return (
 
-    const query = useQuery();
+    //const query = useQuery();
     // <Card>
     //   <div className={classes.overlay}>
     //     <Typography variant="h6">{restraunts.name}</Typography>
@@ -45,16 +45,16 @@ const Restraunt = ({ restraunt }) => {
     // </Card>
         //testing
         
-        console.log(restraunt.name),
-        <Restraunt>
+        console.log(restaurant.name),
+        <Restaurants>
           <h3>"wow"</h3>
-        </Restraunt>
+        </Restaurants>
         
 );
   
 };
 
-export default Restraunts;
+export default Restaurants;
 
 // import React from 'react';
 // import { Grid, CircularProgress } from '@material-ui/core';
