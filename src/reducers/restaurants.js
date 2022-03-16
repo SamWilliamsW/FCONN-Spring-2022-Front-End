@@ -17,7 +17,7 @@ export default (state = { isLoading: true, posts: [] }, action) => {
     // case FETCH_BY_CREATOR:
     //   return { ...state, restaurants: action.payload.data };
     case FETCH_RESTAURANT:
-      return { ...state, restaurants: action.payload.post };
+      return { ...state, restaurants: action.payload.restaurant };
     default:
       return state;
   }
