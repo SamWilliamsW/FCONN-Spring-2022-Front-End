@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@material-ui/core';
 // import { useDispatch } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
+import { BrowserRouter, useHistory, useLocation } from 'react-router-dom';
 // import ChipInput from 'material-ui-chip-input';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, StepIcon } from '@material-ui/core/';
 import { getRestaurant } from '../../actions/restaurants';
@@ -12,6 +12,7 @@ import { getRestaurant } from '../../actions/restaurants';
 // import Pagination from '../Pagination';
 import useStyles from './styles';
 import restaurants from '../../reducers/restaurants';
+import { fetchRestaurant } from '../../api/index.js';
 
 
 function useQuery() {
@@ -23,65 +24,31 @@ const Restaurants = ({ restaurant }) => {
   const classes = useStyles();
   const [name, data] = useState();
 
-
-  // const userId = user?.result?.googleId || user?.result?._id;
-  // const hasLikedPost = post.likes.find((like) => like === userId);
+  // useEffect(() => {
+  //   fetch('name').then(response => {
+  //     setData(response.json())
+  //   })
+  // }, [])
 
 
 
   return (
 
-    //const query = useQuery();
-    // <Card>
-    //   <div className={classes.overlay}>
-    //     <Typography variant="h6">{restraunts.name}</Typography>
-    //   </div>
-     
-    //   <CardContent>
-    //     <Typography variant="body2" color="textSecondary" component="p">{restraunts.message.split(' ').splice(0, 20).join(' ')}...</Typography>
-    //   </CardContent>
-    
+    <Card>
+        {/* //testing
+        // console.log(restaurant.name), */}
 
-    // </Card>
-        //testing
-        
-        console.log(restaurant.name),
-        <Restaurants>
-          <h3>"wow"</h3>
-        </Restaurants>
-        
+        <div className={classes.overlay}>
+          <Typography variant="h6">{restaurant.name}</Typography>
+          <Typography variant="body2">{console.log(restaurant.name)}</Typography>
+        </div>
+        {/* // <Restaurants>
+        //   <h3>"wow"</h3>
+        // </Restaurants> */}
+    </Card>
+      
 );
   
 };
 
 export default Restaurants;
-
-// import React from 'react';
-// import { Grid, CircularProgress } from '@material-ui/core';
-// import { useSelector } from 'react-redux';
-
-// import Post from './Restraunt/restraunt';
-// import useStyles from './styles';
-
-// const Posts = ({ setCurrentId }) => {
-//   const { posts, isLoading } = useSelector((state) => state.posts);
-//   const classes = useStyles();
-
-//   if (!posts.length && !isLoading) return 'No posts';
-
-//   return (
-//     isLoading ? <CircularProgress /> : (
-//       <Grid container alignItems="stretch" spacing={3}>
-//         {posts?.map((post) => (
-//           <Grid key={post._id} item xs={12} sm={12} md={6} lg={3}>
-//             <p>
-// alert( 'Hello, world!' );
-// </p> 
-//           </Grid>
-//         ))}
-//       </Grid>
-//     )
-//   );
-// };
-
-// export default Posts;
