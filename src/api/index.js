@@ -13,7 +13,7 @@ API.interceptors.request.use((req) => {
 export const fetchPost = (id) => API.get(`/posts/${id}`);
 export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
 export const fetchRestaurant = (id) => API.get(`/restaurant/${id}`);
-export const fetchRestaurants = (id) => API.get(`/restaurants?page=${id}`);
+export const fetchRestaurants = (page) => API.get(`/restaurants?page=${page}`);
 export const fetchPostsByCreator = (name) => API.get(`/posts/creator?name=${name}`);
 export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
 export const createPost = (newPost) => API.post('/posts', newPost);
