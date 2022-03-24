@@ -12,6 +12,22 @@ export default makeStyles((theme) => ({
     padding: '10px 50px',
 
   },
+  media: {
+    height: 0,
+    paddingTop: '56.25%',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundBlendMode: 'darken',
+  },
+  temp_rest: {
+    color: 'black',
+    alignItems: 'center',
+    padding: '10px 50px',
+  },
+  grid: {
+    alignItems: 'center',
+    margin: '20px',
+    width: '370px',
+  },
   container: {
     backgroundColor: '#e0aa0f'
   },
