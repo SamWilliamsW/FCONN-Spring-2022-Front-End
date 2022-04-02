@@ -28,6 +28,22 @@ const Restaurant = () => {
 
   const openRestaurant = (_id) => history.push(`/restaurants/${_id}`);
 
+  const CardComponent = ({ restaurants }) => {
+    return (
+        <>
+            {restaurants.map(({ name, address, city, state, _id }) => (
+                <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openRestaurant(_id)} key={_id}>
+                    <Typography gutterBottom variant="h6">{name}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{address}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{city}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{state}</Typography>
+                </div>
+            ))}
+        </>
+    );
+};
+
+
   if (isLoading) {
     return (
       <Paper elevation={6} className={styles.loadingPaper}>
@@ -37,21 +53,9 @@ const Restaurant = () => {
   } else {
 
     return (
-        <Paper className={styles.container} elevation={6}>
-          <div className={styles.card}>
-            <div className={styles.section}>
-              <Typography variant="h3" component="h2">{restaurants[0].name}</Typography>
-              <Typography className={styles.message} gutterBottom variant="body1" component="p">{restaurants[0].address}</Typography>
-              <Typography className={styles.message} gutterBottom variant="body1" component="p">{restaurants[0].city}</Typography>
-                <Typography className={styles.message} gutterBottom variant="body1" component="p">{restaurants[0].state}</Typography>
-                <Typography className={styles.message} gutterBottom variant="body1" component="p">{restaurants[0].zip}</Typography>
-                <Typography className={styles.message} gutterBottom variant="body1" component="p">{restaurants[0].phone}</Typography>
-
-            </div>
-          </div>
-        </Paper>
-      );
-    };
+        <CardComponent restaurants={restaurants} />
+    );
+  };
 };
 
 export default Restaurant;
