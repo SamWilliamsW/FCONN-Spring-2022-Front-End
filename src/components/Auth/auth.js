@@ -13,7 +13,7 @@ import Input from './input';
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
-const businessInitialState = { businessName: '', name:'', businessAddress: '', businessDescription: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '' };
+const businessInitialState = { businessName: '', name:'', businessAddress: '', businessCity: '', businessState: '', businessDescription: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '' };
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
@@ -93,6 +93,8 @@ const SignUp = () => {
             { isBusinessSignup && <Input name="email" label="Email Address" handleChange={handleBusinessChange} type="email" />}
             { isBusinessSignup && (<Input name="businessName" label="Restaurant Name" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessAddress" label="Restaurant Address" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessCity" label="Restaurant City" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessState" label="Restaurant State" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessDescription" label="Restaurant Description" handleChange={handleBusinessChange} multiline={true} fullWidth  />)}
             { isBusinessSignup && (<Input name="businessPhoneNumber" label="Phone Number" handleChange={handleBusinessChange} half />)}
             { !isBusinessSignup && <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}

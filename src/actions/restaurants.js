@@ -1,4 +1,4 @@
-import { FETCH_ALL, FETCH_RESTAURANT, FETCH_BY_CREATOR, FETCH_BY_SEARCH, START_LOADING, END_LOADING } from '../constants/actionTypes';
+import { FETCH_RESTAURANT, FETCH_BY_CREATOR, FETCH_BY_SEARCH, START_LOADING, END_LOADING, FETCH_ALL_RESTAURANTS } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
 export const getRestaurant = (id) => async (dispatch) => {
@@ -12,30 +12,33 @@ export const getRestaurant = (id) => async (dispatch) => {
     console.log(error);
   }
 };
-
+///
 export const getRestaurants = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data: { data, currentPage, numberOfPages } } = await api.fetchRestaurants(page);
+    if (data.length === 0) {
+      data = ["No restaurants found"];
+    }
 
-    dispatch({ type: FETCH_ALL, payload: { data, currentPage, numberOfPages } });
+    dispatch({ type: FETCH_ALL_RESTAURANTS, payload: { data, currentPage, numberOfPages } });
     dispatch({ type: END_LOADING });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const getPostsByCreator = (name) => async (dispatch) => {
-  try {
-    dispatch({ type: START_LOADING });
-    const { data: { data } } = await api.fetchPostsByCreator(name);
-
-    dispatch({ type: FETCH_BY_CREATOR, payload: { data } });
-    dispatch({ type: END_LOADING });
-  } catch (error) {
-    console.log(error);
-  }
-};
+//export const getPostsByCreator = (name) => async (dispatch) => {
+//  try {
+//    dispatch({ type: START_LOADING });
+//    const { data: { data } } = await api.fetchPostsByCreator(name);
+//
+//    dispatch({ type: FETCH_BY_CREATOR, payload: { data } });
+//    dispatch({ type: END_LOADING });
+//  } catch (error) {
+//    console.log(error);
+//  }
+//};
 
 // export const getPostsBySearch = (searchQuery) => async (dispatch) => {
 //   try {
