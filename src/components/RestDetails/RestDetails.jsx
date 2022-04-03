@@ -8,6 +8,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getRestaurant, getRestaurants } from '../../actions/restaurants';
 import useStyles from './styles';
 
+
 const Restaurant = () => {
     const { restaurant, restaurants, isLoading } = useSelector((state) => state.restaurants);
     const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const Restaurant = () => {
                     <Typography gutterBottom variant="subtitle2">{"Address: " + address}</Typography>
                     <Typography gutterBottom variant="subtitle2">{"City: " + city}</Typography>
                     <Typography gutterBottom variant="subtitle2">{"State: " + state}</Typography>
-                    <Typography gutterBottom variant="subtitle2">{"Zi p: " + zip}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{"Zip: " + zip}</Typography>
 
                 </div>
 

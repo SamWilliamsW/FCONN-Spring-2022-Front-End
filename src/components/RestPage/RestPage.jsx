@@ -42,18 +42,49 @@ const RestaurantPage = () => {
                 </div>
 
                 <div className={styles.center}>
-                <Typography variant="subtitle2" gutterBottom>{"Put food info here. "}</Typography>
+                    {restaurant.dinein ? <Typography variant="subtitle2" gutterBottom>Dine In</Typography> : null}
+                    {restaurant.takeout ? <Typography variant="subtitle2" gutterBottom>Take Out</Typography> : null}
+                    {restaurant.delivery ? <Typography variant="subtitle2" gutterBottom>Delivery</Typography> : null}
                 </div>
+
+                <div className={styles.section}>
+                <div>Tags: </div>
+                {restaurant.tags.map((tag) => ( 
+                        <Typography variant="subtitle5">{tag} </Typography>
+                ))}
+                </div>
+
                 
                 <div className={styles.card}>
-                    <Typography gutterBottom variant="h5">Restaurant Hours</Typography>
                     <div className={styles.section}>
-                        <Typography gutterBottom variant="subtitle2">"Hours go here"</Typography>
+                        <Typography gutterBottom variant="h5">Restaurant Hours</Typography>
+                        <Typography gutterBottom variant="subtitle2"> Sunday: {restaurant.businessHoursStart[0]} - {restaurant.businessHoursEnd[0]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Monday: {restaurant.businessHoursStart[1]} - {restaurant.businessHoursEnd[1]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Tuesday: {restaurant.businessHoursStart[2]} - {restaurant.businessHoursEnd[2]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Wednesday: {restaurant.businessHoursStart[3]} - {restaurant.businessHoursEnd[3]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Thursday: {restaurant.businessHoursStart[4]} - {restaurant.businessHoursEnd[4]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Friday: {restaurant.businessHoursStart[5]} - {restaurant.businessHoursEnd[5]}  </Typography>
+                        <Typography gutterBottom variant="subtitle2"> Saturday: {restaurant.businessHoursStart[6]} - {restaurant.businessHoursEnd[6]}  </Typography>
                     </div>
 
-                    <Typography gutterBottom variant="h5">Restaurant Address</Typography>
+                    
+                    
+                    <div className={styles.section}>
+                        <Typography gutterBottom variant="h5">Contact Info</Typography>
+                        <Typography gutterBottom variant="subtitle2">{restaurant.address}</Typography>
+                        <Typography gutterBottom variant="subtitle2">{restaurant.city}, {restaurant.state} {restaurant.zip}</Typography>
+                        <Typography gutterBottom variant="subtitle2">{restaurant.phone}</Typography>
+                    </div>
+
+                </div>
+
+                <div className={styles.center}>
+                    <Link to={restaurant.menuLink}>
+                        <Typography variant="h5" gutterBottom>See our menu</Typography>
+                    </Link>
                 </div>
                 </div>
+            
             </>
         );
     };
