@@ -6,6 +6,27 @@ export default makeStyles((theme) => ({
     margin: '20px',
     padding: '20px', 
     borderRadius: '15px',
+    width:'25%',
+  },
+  gridContainer: {
+    // [theme.breakpoints.down('xs')]: {
+    //   flexDirection: 'column-reverse',
+    // },
+    flexDirection:'row',
+    display:'flex',
+    justifyContent:"space-around",
+    alignItems:"stretch",
+    // width:'100%',
+    display: 'flex',
+    flexWrap:'wrap',
+    // width: '100%',
+    // [theme.breakpoints.down('lg')]: {
+    //   flexWrap: 'wrap',
+    //   flexDirection: 'column',
+    // },
+    borderRadius: '20px',
+    // margin: '10px',
+
   },
   pic: {
     borderRadius: '20px',
@@ -18,17 +39,10 @@ export default makeStyles((theme) => ({
     width: '500px'
   },
   card: {
-    display: 'flex',
-    width: '100%',
-    [theme.breakpoints.down('lg')]: {
-      flexWrap: 'wrap',
-      flexDirection: 'column',
-    },
+
   },
   section: {
-    borderRadius: '20px',
-    margin: '10px',
-    flex: 1,
+
   },
   recommendedPosts: {
     display: 'flex',

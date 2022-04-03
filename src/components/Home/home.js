@@ -6,14 +6,13 @@ import ChipInput from 'material-ui-chip-input';
 
 import { getPostsBySearch } from '../../actions/posts';
 import Posts from '../Posts/posts';
-// import Restraunts from '../Restaurants/restaurants';
 import Form from '../Form/form';
 import Pagination from '../Pagination';
 import useStyles from './styles';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
-}
+} 
 const Home = () => {
   const classes = useStyles();
   const query = useQuery();
@@ -52,7 +51,6 @@ const Home = () => {
         <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
           <Grid item xs={12} sm={6} md={9}>
             <Posts setCurrentId={setCurrentId} />
-            {/* <Restraunts /> */}
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <AppBar className={classes.appBarSearch} position="static" color="inherit">

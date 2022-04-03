@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+import { Grid, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+// import { Rating } from 'material-ui-rating'
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
 
 import { getRestaurant, getRestaurants } from '../../actions/restaurants';
 import useStyles from './styles';
-
 
 const Restaurant = () => {
     const { restaurant, restaurants, isLoading } = useSelector((state) => state.restaurants);
@@ -30,30 +30,34 @@ const Restaurant = () => {
 
     const CardComponent = ({ restaurants }) => {
         return (
-            <>
-                {restaurants.map(({ name, address, city, state, zip, _id }) => (
-                    // We want it in the center
+        <>
+            {restaurants.map(({ name, address, city, state, zip, _id }) => (
+            // We want it in the center
+            <div className={styles.container}>
 
-                    <div className={styles.container}>
-                        <div className={styles.card}>
-                            <div className={styles.section}>
-                                <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openRestaurant(_id)} key={_id}>
-                                    <Typography gutterBottom variant="h4">{name}</Typography>
-                                    <Typography gutterBottom variant="subtitle2">{"Address: " + address}</Typography>
-                                    <Typography gutterBottom variant="subtitle2">{"City: " + city}</Typography>
-                                    <Typography gutterBottom variant="subtitle2">{"State: " + state}</Typography>
-                                    <Typography gutterBottom variant="subtitle2">{"Zip: " + zip}</Typography>
+                <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openRestaurant(_id)} key={_id}>
+                    <Typography gutterBottom variant="h4">{name}</Typography>
+                    {/* <Rating
+                         name="simple-controlled"
+                         value={value}
+                         onChange={(event, newValue) => {
+                           setValue(newValue);
+                         }}
+                    />
+                    <Rating name="no-value" value={null} /> */}
+                    <Typography />
+                    <Typography gutterBottom variant="subtitle2">{"Address: " + address}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{"City: " + city}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{"State: " + state}</Typography>
+                    <Typography gutterBottom variant="subtitle2">{"Zi p: " + zip}</Typography>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
-                ))}
-            </>
+             </div>
+            ))}
+        </>
         );
     };
-
 
     if (isLoading) {
         return (
@@ -64,7 +68,10 @@ const Restaurant = () => {
     } else {
 
         return (
-            <CardComponent restaurants={restaurants} /> // This is our card component defined above. Change stuff in that.
+        // This is our card component defined above. Change stuff in that.
+            <Grid container  spacing={3} className={styles.gridContainer}>
+                <CardComponent restaurants={restaurants} /> 
+            </Grid>
         );
     };
 };
