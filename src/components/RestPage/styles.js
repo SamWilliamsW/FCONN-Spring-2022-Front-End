@@ -8,36 +8,30 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     height: '50px',
   },
-  right: {
-    display: 'flex',
-    justifyContent: 'flex-end',
+  subtitles: {
+    display: 'inline',
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    height: '50px',
   },
   container: {
     backgroundColor: '#DCDCDC',
     margin: '20px',
     padding: '20px', 
     borderRadius: '15px',
+    display: 'grid',
+    // width:'100%',
+    // justifyContent:'flex-start',
   },
   pic: {
     borderRadius: '20px',
     objectFit: 'contain',
-    width: '500px'
+    // width: '500px'
   },
   nopic: {
     borderRadius: '20px',
     objectFit: 'contain',
-    width: '500px'
-  },
-  card: {
-    display: 'flex',
-    width: '100%',
-    [theme.breakpoints.down('lg')]: {
-      flexWrap: 'wrap',
-      flexDirection: 'column',
-    },
+    width: '400px'
   },
   section: {
     borderRadius: '20px',
@@ -58,12 +52,12 @@ export default makeStyles((theme) => ({
     borderRadius: '15px',
     height: '39vh',
   },
-  commentsOuterContainer: {
+  right: {
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
   },
-  commentsInnerContainer: {
+  left: {
     height: '300px',
     overflowY: 'auto',
     marginRight: '30px',
