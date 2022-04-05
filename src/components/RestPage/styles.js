@@ -9,10 +9,12 @@ export default makeStyles((theme) => ({
     height: '50px',
   },
   subtitles: {
-    display: 'inline',
+    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
+    padding: '0 15px',    
     alignItems: 'center',
-    flexDirection: 'column',
+    color: 'green',
   },
   container: {
     backgroundColor: '#DCDCDC',
@@ -23,6 +25,15 @@ export default makeStyles((theme) => ({
     // width:'100%',
     // justifyContent:'flex-start',
   },
+  tags: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    margin: '10px',  
+    alignItems: 'center',
+    color: 'rgb(63, 81, 181)',
+
+  },
   pic: {
     borderRadius: '20px',
     objectFit: 'contain',
@@ -30,8 +41,9 @@ export default makeStyles((theme) => ({
   },
   nopic: {
     borderRadius: '20px',
-    objectFit: 'contain',
-    width: '400px'
+    // objectFit: 'contain',
+    maxWidth: '400px',
+    height: 'auto',
   },
   section: {
     borderRadius: '20px',
@@ -58,8 +70,8 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
   left: {
-    height: '300px',
-    overflowY: 'auto',
+    // height: '300px',
+    // overflowY: 'auto',
     marginRight: '30px',
   },
   message: {

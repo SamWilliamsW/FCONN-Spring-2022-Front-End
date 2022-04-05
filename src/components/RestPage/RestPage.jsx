@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Grid, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+import { FormControlLabel, Box, Grid, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
@@ -38,15 +38,15 @@ const RestaurantPage = () => {
                     <Divider style={{ width: '100%', margin: '20px 0' }} />
 
                 <div className={styles.subtitles}>
-                    <div>{restaurant.dinein ? <Typography variant="subtitle2">Dine In</Typography> : null}</div>
-                    <div>{restaurant.takeout ? <Typography variant="subtitle2">Take Out</Typography> : null}</div>
-                    <div>{restaurant.delivery ? <Typography variant="subtitle2">Delivery</Typography> : null}</div>
+                    <div>{restaurant.dinein ? <Typography variant="subtitle2" className={styles.subtitles}>Dine In</Typography> : null}</div>
+                    <div>{restaurant.takeout ? <Typography variant="subtitle2" className={styles.subtitles}>Take Out</Typography> : null}</div>
+                    <div>{restaurant.delivery ? <Typography variant="subtitle2" className={styles.subtitles}>Delivery</Typography> : null}</div>
                 </div>
 
-                <div className={styles.section}>
+                <div className={styles.tags}>
                 <div>Tags: </div>
                 {restaurant.tags.map((tag) => ( 
-                        <Typography variant="subtitle5">{tag} </Typography>
+                        <Typography className={styles.tags} variant="subtitle5">{`#${tag}`} </Typography>
                 ))}
                 </div>
 
@@ -57,8 +57,8 @@ const RestaurantPage = () => {
                     <div className={styles.left}>
                         <div className={styles.imageSection}>
                             {restaurant.selectedFile ? 
-                            <img className={styles.pic} src={restaurant.selectedFile}  alt={restaurant.title}/> : 
-                            <img className={styles.nopic} src={'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'}
+                            <img className={styles.pic} src={restaurant.photo}  alt={restaurant.title}/> : 
+                            <img className={styles.nopic} src={'https://blog.utc.edu/news/files/2014/03/power-c.jpg'}
                                 alt={restaurant.title} />}
                         </div>
                     </div>
