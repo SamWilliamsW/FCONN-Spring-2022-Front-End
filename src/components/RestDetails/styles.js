@@ -38,11 +38,8 @@ export default makeStyles((theme) => ({
     objectFit: 'contain',
     width: '500px'
   },
-  card: {
-
-  },
-  section: {
-
+  phone: {
+    textDecoration: 'none',
   },
   recommendedPosts: {
     display: 'flex',
@@ -58,18 +55,12 @@ export default makeStyles((theme) => ({
     borderRadius: '15px',
     height: '39vh',
   },
-  commentsOuterContainer: {
-    width: '100%',
+  tags: {
     display: 'flex',
-    justifyContent: 'space-between',
-  },
-  commentsInnerContainer: {
-    height: '300px',
-    overflowY: 'auto',
-    marginRight: '30px',
-  },
-  message: {
-    wordBreak: 'break-all',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    color: 'rgb(63, 81, 181)',
 
-  }
+  },
 }));

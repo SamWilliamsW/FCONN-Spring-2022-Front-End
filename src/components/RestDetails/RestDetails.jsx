@@ -32,7 +32,7 @@ const Restaurant = () => {
     const CardComponent = ({ restaurants }) => {
         return (
         <>
-            {restaurants.map(({ name, address, city, state, zip, _id }) => (
+            {restaurants.map(({ name, address, city, phone,  _id, tags }) => (
             // We want it in the center
             <div className={styles.container}>
 
@@ -47,11 +47,15 @@ const Restaurant = () => {
                     />
                     <Rating name="no-value" value={null} /> */}
                     <Typography />
-                    <Typography gutterBottom variant="subtitle2">{"Address: " + address}</Typography>
-                    <Typography gutterBottom variant="subtitle2">{"City: " + city}</Typography>
-                    <Typography gutterBottom variant="subtitle2">{"State: " + state}</Typography>
-                    <Typography gutterBottom variant="subtitle2">{"Zip: " + zip}</Typography>
-
+                    <Typography gutterBottom variant="subtitle2">{address + ", " + city}</Typography>
+                    <Link className={styles.phone} href={phone}>
+                        <Typography gutterBottom variant="subtitle2">{"Phone: " + phone}</Typography>
+                    </Link>
+                  
+                    <div className={styles.tags}>
+                        <Typography>{"Tags " + tags}</Typography>
+                    </div>
+                    
                 </div>
 
              </div>
