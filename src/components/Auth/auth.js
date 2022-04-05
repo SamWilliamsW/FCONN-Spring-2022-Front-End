@@ -13,7 +13,7 @@ import Input from './input';
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
-const businessInitialState = { businessName: '', name:'', businessAddress: '', businessDescription: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '' };
+const businessInitialState = { businessName: '', name:'', businessAddress: '', businessCity: '', businessState: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '', businessZip: '', businessDescription: '', businessHoursStart: [], businessHoursEnd: [], businessTags: [], businessDelivery: false, businessTakeout: false, businessDineIn: false, businessMenuLink: '', businessPhoto: ''};
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
@@ -69,6 +69,25 @@ const SignUp = () => {
     }
   };
 
+// We want our checkbox to take in a boolean value and toggle it.
+const CheckBox = ({ checked, onChange, label }) => {
+  const classes = useStyles();
+
+  return (
+      <div className={classes.paper}>
+        {label}
+        <input
+          type="checkbox"
+          id="checkbox"
+          name="checkbox"
+          value="value"
+          checked={checked}
+          onChange={onChange}
+        />
+      </div>
+  );
+}
+
   const googleError = (error) => {
     console.log('Google Sign In was unsuccessful. Try again later' + error);
   }
@@ -93,8 +112,42 @@ const SignUp = () => {
             { isBusinessSignup && <Input name="email" label="Email Address" handleChange={handleBusinessChange} type="email" />}
             { isBusinessSignup && (<Input name="businessName" label="Restaurant Name" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessAddress" label="Restaurant Address" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessCity" label="Restaurant City" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessState" label="Restaurant State" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessZip" label="Restaurant Zipcode" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessDescription" label="Restaurant Description" handleChange={handleBusinessChange} multiline={true} fullWidth  />)}
             { isBusinessSignup && (<Input name="businessPhoneNumber" label="Phone Number" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStart" label="Restaurant Hours Start" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEnd" label="Restaurant Hours End" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessTags" label="Restaurant Tags" handleChange={handleBusinessChange} half />)}
+
+<div style={{display: 'flex', justifyContent: 'center', position: 'global', width: '100%'}}>
+      <label>
+            {isBusinessSignup && (<CheckBox
+              checked={businessForm.businessDelivery}
+              onChange={(e) => setBusinessForm({ ...businessForm, businessDelivery: e.target.checked })}
+              label="Delivery"
+            />)}
+            </label>
+            <label>
+            {isBusinessSignup && (<CheckBox
+              checked={businessForm.businessTakeout}
+              onChange={(e) => setBusinessForm({ ...businessForm, businessTakeout: e.target.checked })}
+              label="Takeout"
+            />)}
+            </label>
+            <label>
+            {isBusinessSignup && (<CheckBox
+              checked={businessForm.businessDineIn}
+              onChange={(e) => setBusinessForm({ ...businessForm, businessDineIn: e.target.checked })}
+              label="Dine In"
+            />)}
+            </label>
+            </div>
+
+            { isBusinessSignup && (<Input name="businessMenuLink" label="Menu Link" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessPhoto" label="Photo" handleChange={handleBusinessChange} half />)}
+
             { !isBusinessSignup && <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
             { isBusinessSignup && <Input name="password" label="Password" handleChange={handleBusinessChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
             { (isBusinessSignup || isSignup) && <Input name="confirmPassword" label="Repeat Password" handleChange={(isBusinessSignup)?handleBusinessChange:handleChange} type="password" /> }

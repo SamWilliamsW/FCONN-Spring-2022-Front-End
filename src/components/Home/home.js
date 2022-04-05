@@ -12,7 +12,7 @@ import useStyles from './styles';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
-}
+} 
 const Home = () => {
   const classes = useStyles();
   const query = useQuery();
