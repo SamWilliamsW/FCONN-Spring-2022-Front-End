@@ -59,14 +59,16 @@ const RestaurantPage = () => {
 
                     <div className={styles.left}>
                         <div className={styles.imageSection}>
-                            {restaurant.selectedFile ? 
-                            <img className={styles.pic} src={restaurant.photo}  alt={restaurant.title}/> : 
+                        
+                            {/* Uploaded image */}
+                            {restaurant.photo !== "None" ? (
+                            <img className={styles.pic} src={restaurant.photo}  alt={restaurant.title}/>) : 
                             <img className={styles.nopic} src={'https://blog.utc.edu/news/files/2014/03/power-c.jpg'}
                                 alt={restaurant.title} />}
                         </div>
                     </div>
 
-                {/* Right side of profile */}
+                    {/* Right side of profile */}
 
                     <div className={styles.section}>
                         <Typography gutterBottom variant="h5">Restaurant Hours</Typography>
@@ -88,83 +90,31 @@ const RestaurantPage = () => {
                     
                 </div>
 
-                
-                {restaurant.menuLink !== "None" ? (
+    {/* Menu link */}
+            <Divider style={{ width: '100%', margin: '20px 0' }} />
+            
+            {restaurant.menuLink !== "None" ? (
                 <div className={styles.center}>
                     <Button variant="contained" color="primary" href={restaurant.menuLink}>
                         See our menu
                     </Button>
                 </div>) : null}
+            <Divider style={{ width: '100%', margin: '20px 0' }} />
 
-
-                <section className={styles.section}>
-                   <div className={styles.calendarandmap}>
-                        <MyCalendar/>
-
-                        <MapContainer/>
-                    </div>
-                </section>
+    {/* Calendar and Map Containers */}
+            <section className={styles.section}>
+                <div className={styles.calendarandmap}>
+                    <MyCalendar/>
+                    <MapContainer/>
+                </div>
+            </section>
                
 
-                </div>
+            </div>
             
         );
     };
 };
 
 export default RestaurantPage;
-
-//         return (
-//             <Grid container spacing={2} className={styles.container}>
-//                 {/* <div className={styles.container}> */}
-//                 <Typography variant="h4" gutterBottom>{restaurant.name}</Typography>
-//                 <Divider style={{ width: '100%', margin: '20px 0' }} />
-
-//             {/* Left side of profile */}
-//                 <Grid ListItem sm={4}>
-
-//                 <img alt="complex" src="https://th.bing.com/th/id/R.329998063ad3af37a372c96ac6559c4f?rik=YCMANs%2b7vcA3Mw&pid=ImgRaw&r=0" />
-//                 <Typography gutterBottom variant="h5">Restaurant Hours</Typography>
-//                 <Typography gutterBottom variant="subtitle2">"Hours go here"</Typography>
-
-                    
-//                 </Grid>
-
-//             {/* Right side of profile */}
-//                 <Grid  ListItem md={6} className={styles.right}>
-
-//                 <Typography gutterBottom variant="h5">Restaurant Address</Typography>
-
-
-//                 </Grid>
-//                 <Grid ListItem xs={6} md={8}>
-//                     <ListItem>xs=6 md=8</ListItem>
-//                 </Grid>
-//                 <Grid ListItem xs={8} md={4}>
-//                     <ListItem>xs=6 md=4</ListItem>
-//                 </Grid>
-//                 <Grid ListItem xs={6} md={4}>
-//                     <ListItem>xs=6 md=4</ListItem>
-//                 </Grid>
-//                 <Grid ListItem xs={6} md={8}>
-//                     <ListItem>xs=6 md=8</ListItem>
-//                 </Grid>
-                    
-
-//                 <div className={styles.center}>
-//                 <Typography variant="subtitle2" gutterBottom>{"Put food info here. "}</Typography>
-//                 </div>
-                 
-//                 <div className={styles.card}>
-//                     <div className={styles.section}>
-//                     </div>
-
-//                 </div>
-//                 {/* </div> */}
-//             </Grid>
-//         );
-//     };
-// };
-
-// export default RestaurantPage;
 
