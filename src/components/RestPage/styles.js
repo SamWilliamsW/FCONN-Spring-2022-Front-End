@@ -8,6 +8,12 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     height: '50px',
   },
+  calendarandmap: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row', 
+  },
   subtitles: {
     display: 'flex',
     flexDirection: 'row',

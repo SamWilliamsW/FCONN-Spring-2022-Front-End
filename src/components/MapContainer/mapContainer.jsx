@@ -4,8 +4,10 @@ import {  GoogleMap, LoadScript } from '@react-google-maps/api';
 const MapContainer = () => {
 
     const mapStyles = {
-        height: "40vh",
-        width: "25%",
+        //height: "40vh",
+        //width: "25%",
+        height: "48.5vh",
+        width: "72%"
     };
 
     const defaultCenter = {

@@ -7,6 +7,9 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getRestaurant, getRestaurants } from '../../actions/restaurants';
 import useStyles from './styles';
 
+import MapContainer from '../MapContainer/mapContainer';
+import MyCalendar from '../Calendar/calendar';
+
 
 const RestaurantPage = () => {
     const { restaurants, isLoading } = useSelector((state) => state.restaurants);
@@ -92,6 +95,16 @@ const RestaurantPage = () => {
                         See our menu
                     </Button>
                 </div>) : null}
+
+
+                <section className={styles.section}>
+                   <div className={styles.calendarandmap}>
+                        <MyCalendar/>
+
+                        <MapContainer/>
+                    </div>
+                </section>
+               
 
                 </div>
             

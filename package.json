@@ -15,6 +15,7 @@
     "material-ui-chip-input": "^1.1.0",
     "moment": "2.29.1",
     "react": "^16.12.0",
+    "react-big-calendar": "^0.40.0",
     "react-dom": "^16.12.0",
     "react-file-base64": "^1.0.3",
     "react-google-login": "^5.1.25",
