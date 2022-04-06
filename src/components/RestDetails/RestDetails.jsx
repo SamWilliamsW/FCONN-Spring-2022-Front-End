@@ -25,17 +25,15 @@ const Restaurant = () => {
     console.log(restaurants);
 
 
-    //if (!restaurant) return null;
+
 
     const openRestaurant = (_id) => history.push(`/restaurants/${_id}`);
 
-    const CardComponent = ({ restaurants }) => {
-        return (
-        <>
-            {restaurants.map(({ name, address, city, phone,  _id, tags }) => (
-            // We want it in the center
-            <div className={styles.container}>
+    const CardContent = ({ name, address, city, phone, _id, tags }) => {
 
+        return (
+            <>
+            <div className={styles.container}>
                 <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openRestaurant(_id)} key={_id}>
                     <Typography gutterBottom variant="h4">{name}</Typography>
                     {/* <Rating
@@ -51,14 +49,28 @@ const Restaurant = () => {
                     <Link className={styles.phone} href={phone}>
                         <Typography gutterBottom variant="subtitle2">{"Phone: " + phone}</Typography>
                     </Link>
-                  
+
                     <div className={styles.tags}>
                         <Typography>{"Tags " + tags}</Typography>
                     </div>
-                    
                 </div>
-
              </div>
+            </>
+        );
+    };
+
+
+    // The CardComponent is set up such that it will only render approved restaurants.
+    // If you want to add additional information to the card, make sure you map it and pass it to the CardContent component.
+    const CardComponent = ({ restaurants }) => {
+
+        return (
+        <>
+            {restaurants.map(({ name, address, city, phone,  _id, tags, approved }) => (
+
+                approved ? (
+                    <CardContent name={name} address={address} city={city} phone={phone} _id={_id} tags={tags} />
+            ) : null
             ))}
         </>
         );

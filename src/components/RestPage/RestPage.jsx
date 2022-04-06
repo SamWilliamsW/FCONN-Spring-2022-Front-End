@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FormControlLabel, Box, Grid, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+import { FormControlLabel, Box, Grid, Button, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
@@ -85,11 +85,14 @@ const RestaurantPage = () => {
                     
                 </div>
 
+                
+                {restaurant.menuLink !== "None" ? (
                 <div className={styles.center}>
-                    <Link to={restaurant.menuLink}>
-                        <Typography variant="h5" gutterBottom>See our menu</Typography>
-                    </Link>
-                </div>
+                    <Button variant="contained" color="primary" href={restaurant.menuLink}>
+                        See our menu
+                    </Button>
+                </div>) : null}
+
                 </div>
             
         );
