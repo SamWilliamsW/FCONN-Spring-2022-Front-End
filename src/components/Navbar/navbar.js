@@ -55,6 +55,8 @@ export default function Navbar() {
       <Toolbar className={styles.toolbar}>
         {user?.result ? (
           <div className={styles.profile}>
+            <Link to="calendar" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+            <Button className={styles.userName}>Cal Test</Button></Link>
             <Link to="/mapContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
             <Button className={styles.userName}>MapTest</Button></Link>
             <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>

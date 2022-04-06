@@ -4,7 +4,6 @@ import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom"
 import './App.css';
 import Auth from "./components/Auth/auth";
 import Navbar from "./components/Navbar/navbar";
-//import MapContainer from "./components/MapContainer/mapContainer";
 import useStyles from './styles';
 
 //Doing this will make load times faster. Look up Code Splitting to learn more
@@ -15,7 +14,7 @@ const RestaurantPage = lazy(() => import("./components/RestPage/RestPage"));
 const CreatorOrTag = lazy(() => import("./components/CreatorOrTag/CreatorOrTag"));
 const MapContainer = lazy(() => import("./components/MapContainer/mapContainer"));
 const SurveyContainer = lazy(() => import("./components/SurveyContainer/surveyContainer"));
-
+const MyCalendar = lazy(() => import("./components/Calendar/calendar"));
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -35,6 +34,7 @@ const App = () => {
               <Route path="/restaurants" exact component={RestaurantsDetails} />
               <Route path="/restaurants/:id" exact component={RestaurantPage} />
               <Route path="/mapContainer" exact component={MapContainer} />
+              <Route path="/calendar" exact component={MyCalendar} />
               <Route path="/surveyContainer" exact component={SurveyContainer} />
               <Route path={['/creator/:name', '/tags/:name']} component={CreatorOrTag} />
               <Route path="/auth" exact component={() => (user?.result == null || user?.result == undefined ? <Auth /> : <Redirect to="/posts" />)} />
