@@ -36,13 +36,27 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    width: '100%',
   },
   logout: {
-    marginLeft: '20px',
+    //marginLeft: '20px',
+    marginRight: '10px',
     padding: '6px 12px'
   },
   signin: {
     backgroundColor: '#112e51',
+  },
+  account: {
+    marginRight: '10px',
+    padding: '6px 12px',
+    backgroundColor: '#112e51',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
+    '&:hover': {
+      backgroundColor: 'grey'
+    }
   },
   userName: {
     marginLeft: '10px',
