@@ -13,8 +13,8 @@ import Input from './input';
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
-const businessInitialState = { businessName: '', name:'', businessAddress: '', businessCity: '', businessState: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '', businessZip: '', businessDescription: '', businessHoursStart: [], businessHoursEnd: [], businessTags: [], businessDelivery: false, businessTakeout: false, businessDineIn: false, businessMenuLink: '', businessPhoto: ''};
-
+//const businessInitialState = { businessName: '', name:'', businessAddress: '', businessCity: '', businessState: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '', businessZip: '', businessDescription: '', businessHoursStart: [], businessHoursEnd: [], businessTags: [], businessDelivery: false, businessTakeout: false, businessDineIn: false, businessMenuLink: '', businessPhoto: ''};
+const businessInitialState = { businessName: '', name:'', businessAddress: '', businessCity: '', businessState: '', businessPhoneNumber: '', email: '', password: '', confirmPassword: '', businessZip: '', businessDescription: '', businessHoursStartSun: 0, businessHoursStartMon: 0, businessHoursStartTue:0, businessHoursStartWed: 0, businessHoursStartThu: 0, businessHoursStartFri: 0, businessHoursStartSat: 0, businessHoursEndSun: 0, businessHoursEndMon:0, businessHoursEndTue: 0, businessHoursEndWed: 0, businessHoursEndThu: 0, businessHoursEndFri: 0, businessHoursEndSat: 0, businessTags: [], businessDelivery: false, businessTakeout: false, businessDineIn: false, businessMenuLink: '', businessPhoto: ''};
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [businessForm, setBusinessForm] = useState(businessInitialState);
@@ -114,12 +114,24 @@ const CheckBox = ({ checked, onChange, label }) => {
             { isBusinessSignup && (<Input name="businessAddress" label="Restaurant Address" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessCity" label="Restaurant City" handleChange={handleBusinessChange} half />)}
             { isBusinessSignup && (<Input name="businessState" label="Restaurant State" handleChange={handleBusinessChange} half />)}
-            { isBusinessSignup && (<Input name="businessZip" label="Restaurant Zipcode" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessZip" label="Restaurant Zipcode" handleChange={handleBusinessChange} full />)}
             { isBusinessSignup && (<Input name="businessDescription" label="Restaurant Description" handleChange={handleBusinessChange} multiline={true} fullWidth  />)}
-            { isBusinessSignup && (<Input name="businessPhoneNumber" label="Phone Number" handleChange={handleBusinessChange} half />)}
-            { isBusinessSignup && (<Input name="businessHoursStart" label="Restaurant Hours Start" handleChange={handleBusinessChange} half />)}
-            { isBusinessSignup && (<Input name="businessHoursEnd" label="Restaurant Hours End" handleChange={handleBusinessChange} half />)}
-            { isBusinessSignup && (<Input name="businessTags" label="Restaurant Tags" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessPhoneNumber" label="Phone Number" handleChange={handleBusinessChange} fullWidth />)}
+            { isBusinessSignup && (<Input name="businessHoursStartSun" label="Sunday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndSun" label="Sunday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartMon" label="Monday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndMon" label="Monday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartTue" label="Tuesday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndTue" label="Tuesday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartWed" label="Wednesday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndWed" label="Wednesday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartThu" label="Thursday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndThu" label="Thursday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartFri" label="Friday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndFri" label="Friday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursStartSat" label="Saturday Start Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessHoursEndSat" label="Saturday End Hours" handleChange={handleBusinessChange} half />)}
+            { isBusinessSignup && (<Input name="businessTags" label="Restaurant Tags" handleChange={handleBusinessChange} fullWidth />)}
 
 <div style={{display: 'flex', justifyContent: 'center', position: 'global', width: '100%'}}>
       <label>
@@ -150,7 +162,7 @@ const CheckBox = ({ checked, onChange, label }) => {
 
             { !isBusinessSignup && <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
             { isBusinessSignup && <Input name="password" label="Password" handleChange={handleBusinessChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
-            { (isBusinessSignup || isSignup) && <Input name="confirmPassword" label="Repeat Password" handleChange={(isBusinessSignup)?handleBusinessChange:handleChange} type="password" /> }
+            { (isBusinessSignup || isSignup) && <Input name="confirmPassword " label="Repeat Password (Must be between 8 and 20 characters, must contain a number.)" handleChange={(isBusinessSignup)?handleBusinessChange:handleChange} type="password" /> }
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             { (isBusinessSignup || isSignup) ? 'Sign Up' : 'Sign In' }
