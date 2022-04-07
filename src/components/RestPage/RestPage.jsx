@@ -7,6 +7,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getRestaurant, getRestaurants } from '../../actions/restaurants';
 import useStyles from './styles';
 
+import BulletinBoard from './bulletin';
 import MapContainer from '../MapContainer/mapContainer';
 import MyCalendar from '../Calendar/calendar';
 
@@ -108,6 +109,9 @@ const RestaurantPage = () => {
                     <MapContainer/>
                 </div>
             </section>
+
+            <Divider style={{ margin: '20px 0' }} />
+          <BulletinBoard restaurant={restaurant} />
                
 
             </div>

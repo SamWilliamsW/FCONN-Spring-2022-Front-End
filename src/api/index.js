@@ -20,6 +20,9 @@ export const createPost = (newPost) => API.post('/posts', newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { value });
 export const deleteComment = (id, commentIndex) => API.patch(`/posts/${id}/deleteCommentPost`, { commentIndex }); //
+export const message = (value, id) => API.post(`/restaurants/${id}/message`, { value });
+export const deleteMessage = (id, messageIndex) => API.patch(`/restaurants/${id}/deleteMessage`, { messageIndex }); //
+// export const reportMessage = (id) => API.patch(`/restaurants/${id}/reportMessage`);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`); 
 export const reportPost = (id) => API.patch(`/posts/${id}/reportPost`);

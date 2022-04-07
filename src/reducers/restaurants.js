@@ -1,5 +1,5 @@
-import { FETCH_ALL_RESTAURANTS, FETCH_RESTAURANT } from '../constants/actionTypes';
-
+import { FETCH_ALL_RESTAURANTS, FETCH_RESTAURANT, DELETE_MESSAGE, MESSAGE } from '../constants/actionTypes';
+ 
 export default (state = { isLoading: true, restaurants: [] }, action) => {
   switch (action.type) {
     case 'START_LOADING':
@@ -17,6 +17,20 @@ export default (state = { isLoading: true, restaurants: [] }, action) => {
     // case FETCH_BY_SEARCH:
     // case FETCH_BY_CREATOR:
     //   return { ...state, restaurants: action.payload.data };
+    case MESSAGE:
+      return {
+        ...state,
+        restaurants: state.restaurants.map((restaurant) => {
+          if (restaurant._id === +action.payload._id) {
+            return action.payload;
+          }
+          return restaurant;
+        }),
+      };
+    case DELETE_MESSAGE:
+      return { ...state, restaurants: state.restaurants.map((restaurant) => (
+        restaurant._id === action.payload._id ? action.payload : restaurant)) 
+      };
     case FETCH_RESTAURANT:
       return { 
         ...state, 
