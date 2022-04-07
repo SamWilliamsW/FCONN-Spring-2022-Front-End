@@ -43,6 +43,7 @@ export default makeStyles((theme) => ({
   pic: {
     borderRadius: '20px',
     objectFit: 'contain',
+    maxWidth: '500px',
     // width: '500px'
   },
   nopic: {
