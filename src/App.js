@@ -43,6 +43,8 @@ const App = () => {
       </Container>
     </BrowserRouter>
   );
+  // For those who take on this project after us ( ⚆ _ ⚆ ) abandon all hope (▰˘︹˘▰) may god have mercy on your souls. (´°ω°`)
+  // Sorry (◞‸◟ㆀ)
 }
 
 
