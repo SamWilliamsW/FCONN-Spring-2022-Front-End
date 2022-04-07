@@ -28,6 +28,7 @@ To start up the project you will need to install npm, node.js, and bootstrap ins
 * The only global depedency you need is nodemon for this project.
 * You can install by typing "npm install -g nodemon" in the terminal.
 * Install the Google Maps API by using the command "npm i @react-google-maps/api"
+* Install the Survey API with "npm install survey-react"
 * Link to the Backend repo https://github.com/lucasdale99/FCONN_Backend
 
 ### Making Changes to Google API Services
