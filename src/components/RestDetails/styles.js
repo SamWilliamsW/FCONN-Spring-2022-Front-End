@@ -14,7 +14,7 @@ export default makeStyles((theme) => ({
     // },
     flexDirection:'row',
     display:'flex',
-    justifyContent:"space-around",
+    justifyContent:"start",
     alignItems:"stretch",
     // width:'100%',
     display: 'flex',

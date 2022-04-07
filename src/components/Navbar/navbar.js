@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Avatar, Button, AppBar, Toolbar, Typography } from '@material-ui/core'
+import { Avatar, Button, AppBar, Toolbar, Typography, Chip  } from '@material-ui/core'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
@@ -62,13 +62,19 @@ export default function Navbar() {
             //<Button className={styles.userName}>MapTest</Button></Link>
             }
             <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
-            <Button className={styles.userName}>Restaurants</Button></Link>
+              <Button className={styles.userName}>Restaurants</Button>
+            </Link>
 
-            <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
+            {/* <Button className={styles.userName} variant="contained" onClick={profile}> */}
+            
+              <Chip avatar={<Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>}
+                label={user?.result.name} onClick={profile} color="primary" />
+            {/* </Link></Button> */}
+
             <Link to="/surveyContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
-            <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
-            <Button className={styles.userName}>Account</Button></Link>
-            <Link to="/surveyContainer" className={styles.brandContainer} style={{ textDecoration: 'none' }}></Link>
+              <Button className={styles.userName}>Survey</Button>
+            </Link>
+
             <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
           </div>
         ) : (
