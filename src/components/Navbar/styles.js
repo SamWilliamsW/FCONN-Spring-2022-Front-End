@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     marginBottom: '30px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#e0aa0f',
     overflowX: 'hidden',
@@ -34,7 +34,7 @@ export default makeStyles((theme) => ({
   },
   profile: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     width: '100%',
   },
