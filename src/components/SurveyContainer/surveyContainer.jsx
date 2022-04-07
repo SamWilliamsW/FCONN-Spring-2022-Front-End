@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import 'C:\\Users\\thesd\\Documents\\FCONN\\FrontEnd\\FCONN-Spring-2022-Front-End\\src\\App.css'
+import '../../../src/App.css'
 import "survey-react/survey.css"
 import * as Survey from "survey-react"
 
