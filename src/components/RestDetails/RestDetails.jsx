@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid, Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
-// import { Rating } from 'material-ui-rating'
+// import { Rating } from 'material-ui-rating' // For when we can add ratings (if we can, legally?)
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getRestaurant, getRestaurants } from '../../actions/restaurants';
 import useStyles from './styles';
 
-
+// This is the component that will be rendered when the user clicks on a restaurant
 const Restaurant = () => {
     const { restaurant, restaurants, isLoading } = useSelector((state) => state.restaurants);
     const dispatch = useDispatch();
@@ -16,6 +16,9 @@ const Restaurant = () => {
     const styles = useStyles();
     const { id } = useParams();
 
+
+    // We dispatch the getRestaurants action to get all the restaurants. 
+    // The getRestaurant action is also dispatched to get the restaurant with the id from the restaurants array
     useEffect(() => {
         dispatch(getRestaurants());
         dispatch(getRestaurant(id));
@@ -26,7 +29,7 @@ const Restaurant = () => {
 
 
 
-
+    // Find the restaurant with the id from the restaurants array
     const openRestaurant = (_id) => history.push(`/restaurants/${_id}`);
 
     const CardContent = ({ name, address, city, phone, _id, tags }) => {

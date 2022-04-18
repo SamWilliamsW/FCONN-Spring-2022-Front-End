@@ -1,6 +1,7 @@
 import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, DELETE_COMMENT, FETCH_BY_CREATOR, REPORT } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
+// Fetch an individual post by id from the database
 export const getPost = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -13,6 +14,7 @@ export const getPost = (id) => async (dispatch) => {
   }
 };
 
+// Fetch all posts from the database
 export const getPosts = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -25,6 +27,7 @@ export const getPosts = (page) => async (dispatch) => {
   }
 };
 
+// Fetch all posts from the database based on the who the user is searching for
 export const getPostsByCreator = (name) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -37,6 +40,7 @@ export const getPostsByCreator = (name) => async (dispatch) => {
   }
 };
 
+// Fetch all posts from the database based on the search term
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -49,6 +53,7 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   }
 };
 
+// Create a new post in the database
 export const createPost = (post, history) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -62,6 +67,7 @@ export const createPost = (post, history) => async (dispatch) => {
   }
 };
 
+// Update a post in the database based on the id
 export const updatePost = (id, post) => async (dispatch) => {
   try {
     const { data } = await api.updatePost(id, post);
@@ -72,6 +78,7 @@ export const updatePost = (id, post) => async (dispatch) => {
   }
 };
 
+// Like a post in the database based on the id
 export const likePost = (id) => async (dispatch) => {
   const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -84,6 +91,7 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
+// Comment on a post in the database based on the id
 export const commentPost = (value, id) => async (dispatch) => {
   try {
     const { data } = await api.comment(value, id);
@@ -95,6 +103,7 @@ export const commentPost = (value, id) => async (dispatch) => {
   }
 };
 
+// Delete a comment on a post in the database based on the id
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
@@ -105,6 +114,7 @@ export const deletePost = (id) => async (dispatch) => {
   }
 };
 
+// Delete a comment on a post in the database based on the id
 export const deleteCommentPost = (id, commentIndex) => async (dispatch) => { //
     try {
         const { data } = await api.deleteComment(id, commentIndex);
@@ -117,6 +127,8 @@ export const deleteCommentPost = (id, commentIndex) => async (dispatch) => { //
 
 
 // This is for reporting a post. The method is called reportPost in the backend. 
+// It reports a post based on the id
+// It may be useful to store the reportee's id in the database in the future
 export const reportPost = (id) => async (dispatch) => {
   try {
     const { data } = await api.reportPost(id);

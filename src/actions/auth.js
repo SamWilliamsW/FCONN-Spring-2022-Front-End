@@ -25,6 +25,7 @@ export const signup = (formData, router) => async (dispatch) => {
   }
 };
 
+// This is basically the same thing as the regular signup method but for restaurants owners to sign up.
   export const businesssignup = (formData, router) => async (dispatch) => {
     try {
       const { data } = await api.businessSignUp(formData);
