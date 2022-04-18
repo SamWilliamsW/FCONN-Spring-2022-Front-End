@@ -1,6 +1,7 @@
 import { FETCH_RESTAURANT, MESSAGE, DELETE_MESSAGE, REPORT, FETCH_BY_SEARCH, START_LOADING, END_LOADING, FETCH_ALL_RESTAURANTS } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
+// Fetch an individual restaurant by id from the database
 export const getRestaurant = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -13,6 +14,7 @@ export const getRestaurant = (id) => async (dispatch) => {
   }
 };
 
+// Fetch all restaurants from the database
 export const getRestaurants = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -28,6 +30,7 @@ export const getRestaurants = (page) => async (dispatch) => {
   }
 };
 
+// Fetch our messageBoard info from the database for a specific restaurant based on the id
 export const messageBoard = (value, id) => async (dispatch) => {
   try {
     const { data } = await api.message(value, id);
@@ -39,6 +42,8 @@ export const messageBoard = (value, id) => async (dispatch) => {
   }
 };
 
+
+// Delete a message from the database from the messageBoard on the restaurant page based on the id
 export const deleteMessage = (id, messageIndex) => async (dispatch) => { //
   try {
       const { data } = await api.deleteMessage(id, messageIndex);

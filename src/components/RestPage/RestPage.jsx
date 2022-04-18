@@ -11,7 +11,8 @@ import BulletinBoard from './bulletin';
 import MapContainer from '../MapContainer/mapContainer';
 import MyCalendar from '../Calendar/calendar';
 
-
+// This is the component that will be rendered when the user clicks on a restaurant
+// It's basically just a bunch of restaraunt info
 const RestaurantPage = () => {
     const { restaurants, isLoading } = useSelector((state) => state.restaurants);
     const dispatch = useDispatch();
