@@ -27,13 +27,15 @@ To start up the project you will need to install npm, node.js, and bootstrap ins
 * You can check your global dependencies with this command: npm list -g --depth=0
 * The only global depedency you need is nodemon for this project.
 * You can install by typing "npm install -g nodemon" in the terminal.
-* Install the Google Maps API by using the command "npm i @react-google-maps/api"
-* Install the Survey API with "npm install survey-react"
 * Link to the Backend repo https://github.com/lucasdale99/FCONN_Backend
 
 ### Making Changes to Google API Services
 * https://console.cloud.google.com/home/dashboard?project=foodconnection-328003
-	
+
+### API Info:
+* Google Maps - Someone can register a new account with https://developers.google.com/maps/documentation/javascript/get-api-key
+  to create a new API Key, which goes in the Frontend .env file. 
+* Calendar - link to React Big Calendar Git => https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page
 
 Don't forget:
 1. When working in react, you need to import the components you want to use. If you get errors similar to can't find estate, you need to import that like:
