@@ -48,6 +48,7 @@ Contact Information
   samuelwhitwill@gmail.com
   tfj684@mocs.utc.edu
   pql796@mocs.utc.edu
+  joshuapr999@gmail.com
 These are all group members from last semester spring 2022 if you have any questions.
 
 
