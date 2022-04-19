@@ -1,31 +1,31 @@
-import React, { } from 'react';
-import {  GoogleMap, LoadScript } from '@react-google-maps/api';
+import React from 'react';
+import { Calendar, Views, momentLocalizer  } from 'react-big-calendar' 
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import moment from 'moment'
 
-const MapContainer = () => {
+// React-big-calendar API component.  See Readme for more info
+// Basic Calendar container, call <MyCalendar/> and import to place in another component
 
-    const mapStyles = {
-        //height: "40vh",
-        //width: "25%",
-        height: "48.5vh",
-        width: "72%"
-    };
-
-    const defaultCenter = {
-        lat: 35.0459, lng: -85.2953,
-    };
-
+const localizer = momentLocalizer(moment)
+const MyCalendar = () => {
+    
+ 
     return (
-        <LoadScript
-            googleMapsApiKey="AIzaSyAWxJDu4MVclbgA4OJ9TX2N5ms-w9egOMU"
-        >
-            <GoogleMap
-                mapContainerStyle={mapStyles}
-                center={defaultCenter}
-                zoom={13} />
-
-        </LoadScript>
-
+    
+    <Calendar 
+    localizer={localizer} 
+    
+    //defaultView = {'month'}
+    //events={myEventsList}
+    views={[Views.MONTH, Views.WEEK, Views.DAY]}
+    style={{ height: 300, width: '25%', backgroundColor: 'yellow', color: 'blue', boxSizing: 'border-box'}}
+    
+ 
+    startAccessor="start"
+    endAccessor="end"
+    
+    />
     );
 }
 
-export default MapContainer;
+export default MyCalendar;
