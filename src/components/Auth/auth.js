@@ -63,7 +63,7 @@ const SignUp = () => {
     const token = res?.tokenId;
     try {
       dispatch({ type: AUTH, data: { result, token } });
-      history.push('/posts');
+      history.push('/restaurants');
     } catch (error) {
       console.log(error);
     }
