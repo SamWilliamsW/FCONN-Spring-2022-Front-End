@@ -48,7 +48,7 @@ export default function Navbar() {
         <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
-        : <Link to="/posts" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+        : <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
       }
@@ -63,6 +63,10 @@ export default function Navbar() {
             }
             <Link to="/restaurants" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
               <Button className={styles.userName}>Restaurants</Button>
+            </Link>
+            
+            <Link to="/posts" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+              <Button className={styles.userName}>General Feed</Button>
             </Link>
 
             {/* <Button className={styles.userName} variant="contained" onClick={profile}> */}

@@ -161,8 +161,8 @@ const CheckBox = ({ checked, onChange, label }) => {
             { isBusinessSignup && (<Input name="businessPhoto" label="Photo" handleChange={handleBusinessChange} half />)}
 
             { !isBusinessSignup && <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
-            { isBusinessSignup && <Input name="password" label="Password" handleChange={handleBusinessChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
-            { (isBusinessSignup || isSignup) && <Input name="confirmPassword " label="Repeat Password (Must be between 8 and 20 characters, must contain a number.)" handleChange={(isBusinessSignup)?handleBusinessChange:handleChange} type="password" /> }
+            { isBusinessSignup && <Input name="password" label="Password (8-20 characters, number required)" handleChange={handleBusinessChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />}
+            { (isBusinessSignup || isSignup) && <Input name="confirmPassword " label="Repeat Password" handleChange={(isBusinessSignup)?handleBusinessChange:handleChange} type="password" /> }
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             { (isBusinessSignup || isSignup) ? 'Sign Up' : 'Sign In' }
