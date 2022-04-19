@@ -42,3 +42,10 @@ Don't forget:
     import {useState} from "react";
 
 1. This is the same for all components. Each component if used in a certain view, needs to be imported.
+
+Contact Information
+  khanson0805@yahoo.com 
+  samuelwhitwill@gmail.com
+  tfj684@mocs.utc.edu
+  pql796@mocs.utc.edu
+These are all group members from last semester spring 2022 if you have any questions.
